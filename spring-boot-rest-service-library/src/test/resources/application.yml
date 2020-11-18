@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: nal-data-service
+
+  cloud:
+    bus:
+      enabled: false
+
+  zipkin:
+    enabled: false
+
+  cache:
+    type: simple
+
+swagger:
+  application:
+    description: Data service to call NodeAnalysisList
+
+eureka:
+  client:
+    enabled: false
+
+servlet:
+  shutdown:
+    delay: 1
+
+management:
+  metrics:
+    export:
+      influx:
+        enabled: false

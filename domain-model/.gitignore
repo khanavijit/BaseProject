@@ -1,0 +1,10 @@
+.classpath
+.project
+.idea/
+target/
+*.iml
+
+### Eclipse IDE ###
+.classpath
+.project
+.settings
