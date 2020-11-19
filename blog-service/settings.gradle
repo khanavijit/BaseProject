@@ -1,2 +1,13 @@
+pluginManagement {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    plugins {
+        id 'org.springframework.boot' version "${springBootVersion}"
+    }
+}
+
 rootProject.name = 'blog-service'
 

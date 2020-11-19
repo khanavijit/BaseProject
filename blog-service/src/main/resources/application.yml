@@ -1,0 +1,75 @@
+spring:
+  application:
+    name: blog-service
+  jackson:
+    default-property-inclusion: non_null
+    date-format: "YYYY-MM-dd"
+    serialization:
+      write_dates_as_timestamps: false
+
+  main:
+    allow-bean-definition-overriding: true
+
+  profiles:
+    active: "local"
+
+swagger:
+  application:
+    description: Blog Service Microservice
+
+
+---
+
+spring:
+  profiles: local
+
+  data:
+    cassandra:
+      keyspace-name: test
+      contactPoints: localhost
+      schemaAction: none
+      local-datacenter: datacenter1
+      pool:
+        heartbeat-interval: 10s
+        idle-timeout: 30s
+
+  cache:
+    type: hazelcast
+
+  cloud:
+    bus:
+      enabled: false
+
+  zipkin:
+    enabled: false
+
+eureka:
+  client:
+    enabled: false
+
+management:
+  info:
+    git:
+      mode: full
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  metrics:
+    export:
+      influx:
+        enabled: false
+
+cassandra:
+  migration:
+    keyspace-name: test
+    script-location: migrations
+    strategy: ignore_duplicates
+
+servlet:
+  shutdown:
+    delay: 0
+

@@ -1,0 +1,19 @@
+management:
+  metrics:
+    export:
+      influx:
+        enabled: false
+
+
+spring:
+  cloud:
+    bus:
+      enabled: false
+
+  zipkin:
+    enabled: false
+
+opentracing:
+  spring:
+    web:
+      enabled: true
